@@ -1,14 +1,28 @@
-import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
+import { reactive } from 'vue';
 
-export const useEndpointStore = defineStore('endpoint', () => {
-  const endpoint = ref('hello');
+export const alertStore = defineStore('alert', () => {
+  const state = reactive({
+    show: false,
+    type: '',
+    title: '',
+  });
 
-  // function increment() {
-  //   count.value++;
-  // }
+  function set(type, title) {
+    state.show = true;
+    state.type = type;
+    state.title = title;
+  }
 
-  return { endpoint };
+  function setSuccessTitle(title) {
+    set('success', title);
+  }
+
+  function setErrorTitle(title) {
+    set('error', title);
+  }
+
+  return { state, setSuccessTitle, setErrorTitle };
 });
 
 // const counter = useCounterStore();

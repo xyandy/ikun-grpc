@@ -35,6 +35,7 @@
 
 <script setup>
 import JsonEditorWrapper from '@/components/JsonEditorWrapper.vue';
+import { alertStore } from '@/stores';
 import { Refresh } from '@element-plus/icons-vue';
 import { DescribeGrpcSymbol, GetGrpcMessageTemplate, InvokeGrpc } from '@wailsjs/go/backend/App';
 import { onBeforeMount, reactive } from 'vue';
@@ -42,6 +43,7 @@ import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
+const alert = alertStore();
 
 const { endpoint } = route.query;
 const { svc, func } = route.params;
@@ -54,7 +56,7 @@ const requestOptions = {
 const requestEditor = reactive({
   templateJson: {},
   payloadJson: {},
-  metadataJson: { caller: 'easy-grpc' },
+  metadataJson: { caller: 'ikun-grpc' },
   activeName: 'Payload',
 });
 const responseOptions = {
@@ -87,8 +89,10 @@ onBeforeMount(async () => {
     const template = await GetGrpcMessageTemplate(endpoint, requestName);
     requestEditor.templateJson = JSON.parse(template);
     requestEditor.payloadJson = requestEditor.templateJson;
+    alert.setSuccessTitle(`connect with ${endpoint} successfully`);
   } catch (err) {
     console.error(err);
+    alert.setErrorTitle(`fail to connect with ${endpoint}`);
   }
 });
 
@@ -98,14 +102,16 @@ async function invokeAPI() {
     console.log(result);
     responseEditor.payloadJson = JSON.parse(result.RespBody);
     responseEditor.metadataJson = result.RespHeader;
+    alert.setSuccessTitle(`connect with ${endpoint} successfully`);
   } catch (err) {
     console.error(err);
+    alert.setErrorTitle(`fail to connect with ${endpoint}`);
   }
 }
 
 function reset() {
   requestEditor.payloadJson = requestEditor.templateJson;
-  requestEditor.metadataJson = { caller: 'easy-grpc' };
+  requestEditor.metadataJson = { caller: 'ikun-grpc' };
 }
 </script>
 

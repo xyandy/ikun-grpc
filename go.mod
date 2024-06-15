@@ -1,4 +1,4 @@
-module easy-grpc
+module ikun-grpc
 
 go 1.21
 

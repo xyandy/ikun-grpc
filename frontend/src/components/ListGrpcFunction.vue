@@ -10,12 +10,14 @@
 </template>
 
 <script setup>
+import { alertStore } from '@/stores';
 import { ListGrpcSymbol } from '@wailsjs/go/backend/App';
 import { onBeforeMount, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
+const alert = alertStore();
 const { path } = route;
 const { endpoint } = route.query;
 const { svc } = route.params;
@@ -31,8 +33,10 @@ onBeforeMount(async () => {
         action: 'invokeAPI',
       };
     });
+    alert.setSuccessTitle(`connect with ${endpoint} successfully`);
   } catch (err) {
     console.error(err);
+    alert.setErrorTitle(`fail to connect with ${endpoint}`);
   }
 });
 

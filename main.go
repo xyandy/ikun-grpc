@@ -8,21 +8,20 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 
-	"easy-grpc/backend"
+	"ikun-grpc/backend"
 )
 
 //go:embed all:frontend/dist
 var assets embed.FS
 
 func main() {
-	// Create an instance of the app structure
 	app := backend.NewApp()
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "easy-grpc-vue",
-		Width:  1024,
-		Height: 768,
+		Title:  "ikun-grpc",
+		Width:  1000,
+		Height: 800,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},

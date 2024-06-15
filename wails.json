@@ -1,7 +1,7 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "easy-grpc-vue",
-  "outputfilename": "easy-grpc-vue",
+  "name": "ikun-grpc",
+  "outputfilename": "ikun-grpc",
   "frontend:install": "pnpm install",
   "frontend:build": "pnpm build",
   "frontend:dev:watcher": "pnpm dev",

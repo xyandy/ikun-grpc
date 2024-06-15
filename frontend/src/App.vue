@@ -3,13 +3,14 @@ import MainView from '@/views/MainView.vue';
 </script>
 
 <template>
-  <el-row>
+  <!-- <el-row>
     <el-col :span="1"></el-col>
     <el-col :span="22">
-      <MainView />
+
     </el-col>
     <el-col :span="1"></el-col>
-  </el-row>
+  </el-row> -->
+  <MainView />
 </template>
 
 <style scoped>
