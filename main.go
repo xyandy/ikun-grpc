@@ -19,9 +19,10 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "ikun-grpc",
-		Width:  1000,
-		Height: 800,
+		Title:         "ikun-grpc",
+		Width:         1200,
+		Height:        800,
+		DisableResize: true,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
