@@ -35,7 +35,7 @@ onBeforeMount(async () => {
         action: 'showMethods',
       };
     });
-    alert.setSuccessTitle(`connect with ${endpoint} successfully`);
+    alert.setSuccessTitle(`succeed in listing grpc services for ${endpoint}`);
   } catch (err) {
     console.error(err);
     alert.setErrorTitle(`fail to connect with ${endpoint}`);

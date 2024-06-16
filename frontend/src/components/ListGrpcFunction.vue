@@ -33,7 +33,7 @@ onBeforeMount(async () => {
         action: 'invokeAPI',
       };
     });
-    alert.setSuccessTitle(`connect with ${endpoint} successfully`);
+    alert.setSuccessTitle(`succeed in listing grpc methods for ${svc}`);
   } catch (err) {
     console.error(err);
     alert.setErrorTitle(`fail to connect with ${endpoint}`);
