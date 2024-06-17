@@ -1,16 +1,16 @@
 # Ikun-grpc
 
-`Ikun-grpc` is a cross platform grpc client based on grpc reflection. It's sort of like Postman which can help you interact with grpc servers
+`Ikun-grpc` is a cross platform grpc client based on grpc reflection. It's sort of like Postman which can help you interact with grpc servers.
 
 ## Features
 
-- Runs on Windows, Mac and Linux **(done)**
-- Selection of multiple grpc services and methods **(done)**
-- Automatically render grpc request json template based on protobuf definition **(done)**
-- Invoke grpc API with grpc metadata support **(done)**
-- Show grpc request and response protobuf definition **(done)**
-- TLS support (Now only support plaintext) **(todo)**
-- `.proto` file discovery (Now only support grpc reflection) **(todo)**
+- Runs on Windows, Mac and Linux. **(done)**
+- Selection of multiple grpc services and methods. **(done)**
+- Automatically render grpc request json template based on protobuf definition. **(done)**
+- Invoke grpc API with grpc metadata support. **(done)**
+- Show grpc request and response protobuf definition. **(done)**
+- TLS support (Now only support plaintext). **(todo)**
+- `.proto` file discovery (Now only support grpc reflection). **(todo)**
 
 ## Usage
 
