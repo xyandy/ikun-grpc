@@ -16,7 +16,18 @@
 
 ![Alt Text](./demo.gif)
 
-## Download
+## Installation
+
+- Download from the [latest release](https://github.com/xyandy/ikun-grpc/releases/latest)
+
+- Build from source code
+
+  ```shell
+  # you must set up go/ nodejs development environment
+  git clone https://github.com/xyandy/ikun-grpc.git
+  cd ikun-grpc
+  wails build
+  ```
 
 ## Development
 
